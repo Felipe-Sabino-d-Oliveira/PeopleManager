@@ -77,3 +77,4 @@ Nota: Por ser uma aplicação front-end pura, não é necessário servidor backe
 - MDN Web Docs - LocalStorage
 ## Autor
 Felipe Sabino de Oliveira Lima - fsabino006@gmail.com
+LinkedIn -
