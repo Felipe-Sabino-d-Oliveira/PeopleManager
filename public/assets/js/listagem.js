@@ -41,7 +41,8 @@ class ListagemTable {
 
 // Funções globais para editar e deletar (devido à simplicidade)
 window.editar = (id) => {
-  Swal.fire('Editar não implementado na versão simples. Use cadastro para atualizar.');
+  // Redireciona para cadastro.html com parâmetro edit
+  window.location.href = `cadastro.html?edit=${id}`;
 };
 
 window.deletar = (id) => {
