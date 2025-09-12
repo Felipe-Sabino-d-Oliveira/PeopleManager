@@ -1,7 +1,7 @@
 // Importar módulos (usando relative paths, mas em produção considerar bundler)
-import { Pessoa } from '../../src/models/Pessoa.js';
-import { ApiCorreios } from '../../src/services/ApiCorreios.js';
-import { Validator } from '../../src/utils/Validator.js';
+import { Pessoa } from '/src/models/Pessoa.js';
+import { ApiCorreios } from '/src/services/ApiCorreios.js';
+import { Validator } from '/src/utils/Validator.js';
 import { app } from './app.js';
 class CadastroForm {
   constructor() {
