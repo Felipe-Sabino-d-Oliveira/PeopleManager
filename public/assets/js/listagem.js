@@ -1,20 +1,26 @@
 // Importar módulos
-import { Pessoa } from '../../src/models/Pessoa.js';
+import { Pessoa } from '/src/models/Pessoa.js';
 import { app } from './app.js';
 import { Component } from './app.js';
+
 class ListagemTable {
   constructor() {
-    this.tableBody = document.querySelector('#tabelaPessoas tbody');
+    // Seleciona o tbody pelo id novo
+    this.tableBody = document.getElementById('tabelaPessoasBody');
     this.init();
   }
+
   init() {
     this.render();
   }
+
   render() {
     const pessoas = app.loadPessoas();
     const rows = pessoas.map(p => this.createRow(p)).join('');
-    Component.render('tabelaPessoas tbody', rows);
+    // Passa o id correto do tbody para renderizar
+    Component.render('tabelaPessoasBody', rows);
   }
+
   createRow(pessoa) {
     return `
       <tr>
@@ -32,11 +38,12 @@ class ListagemTable {
     `;
   }
 }
+
 // Funções globais para editar e deletar (devido à simplicidade)
 window.editar = (id) => {
-  // Simples: redirecionar para cadastro com query ?edit=id (não implementado, mas ideia)
   Swal.fire('Editar não implementado na versão simples. Use cadastro para atualizar.');
 };
+
 window.deletar = (id) => {
   if (confirm('Confirma exclusão?')) {
     const pessoas = app.loadPessoas();
@@ -44,7 +51,8 @@ window.deletar = (id) => {
     new ListagemTable().render(); // Re-renderizar
   }
 };
-// Instanciar
+
+// Instanciar somente se a tabela existir
 if (document.getElementById('tabelaPessoas')) {
   new ListagemTable();
 }
