@@ -17,6 +17,7 @@ class LoginForm extends HTMLElement {
         form {
           display: flex;
           flex-direction: column;
+          
         }
         .form-label {
           margin-top: 10px;
